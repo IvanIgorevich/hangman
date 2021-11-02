@@ -1,3 +1,4 @@
+# блок исправления кодировки на случай если у пользователя Windows
 if (Gem.win_platform?)
   Encoding.default_external = Encoding.find(Encoding.locale_charmap)
   Encoding.default_internal = __ENCODING__
@@ -7,6 +8,7 @@ if (Gem.win_platform?)
   end
 end
 
+# подключаем классы игры из папки lib
 require_relative "lib/console_interface"
 require_relative "lib/game"
 
@@ -30,5 +32,4 @@ until game.over?
 end
 
 # 4. Вывести финальное состояние игры
-
 console_interface.print_out
