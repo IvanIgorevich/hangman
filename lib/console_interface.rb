@@ -9,13 +9,13 @@
   end
 
   def print_out
-    puts <<~END_OF_GAME_STATUS
+    puts <<~GAME_STATUS
       Слово: #{word_to_show}
       #{figure}
       Ошибки (#{@game.errors_made}): #{errors_to_show}
       У вас осталось ошибок: #{@game.errors_allowed}
 
-    END_OF_GAME_STATUS
+    GAME_STATUS
 
     if @game.won?
       puts "Поздравляем, вы выиграли!"
